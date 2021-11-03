@@ -1,0 +1,31 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "adc65f3d-6585-486e-8fc9-487d4f64fdb3": {
+      "ProjectGuid": "adc65f3d-6585-486e-8fc9-487d4f64fdb3",
+      "DisplayName": "Gestevent.webapi",
+      "ColorIndex": 0
+    },
+    "d062e187-4679-4697-b526-6962afc5884a": {
+      "ProjectGuid": "d062e187-4679-4697-b526-6962afc5884a",
+      "DisplayName": "Gestevent.Core",
+      "ColorIndex": 1
+    },
+    "62a217ab-fc5f-46c0-aa87-75c3fab63051": {
+      "ProjectGuid": "62a217ab-fc5f-46c0-aa87-75c3fab63051",
+      "DisplayName": "Gestevent.Data",
+      "ColorIndex": 2
+    },
+    "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3": {
+      "ProjectGuid": "a2fe74e1-b743-11d0-ae1a-00a0c90fffc3",
+      "DisplayName": "Arquivos Diversos",
+      "ColorIndex": -1
+    },
+    "8b53ffbc-cec1-47f9-bcaf-d279c1fbc692": {
+      "ProjectGuid": "8b53ffbc-cec1-47f9-bcaf-d279c1fbc692",
+      "DisplayName": "Data.gestevent",
+      "ColorIndex": 3
+    }
+  },
+  "NextColorIndex": 4
+}

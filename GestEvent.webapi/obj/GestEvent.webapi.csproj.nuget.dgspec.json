@@ -1,17 +1,111 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\GestEvent.webapi\\GestEvent.webapi.csproj": {}
+    "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\Gestevent.webapi.csproj": {}
   },
   "projects": {
-    "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\GestEvent.webapi\\GestEvent.webapi.csproj": {
+    "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Data.gestevent\\Data.gestevent.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\GestEvent.webapi\\GestEvent.webapi.csproj",
-        "projectName": "GestEvent.webapi",
-        "projectPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\GestEvent.webapi\\GestEvent.webapi.csproj",
+        "projectUniqueName": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Data.gestevent\\Data.gestevent.csproj",
+        "projectName": "Data.gestevent",
+        "projectPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Data.gestevent\\Data.gestevent.csproj",
         "packagesPath": "C:\\Users\\BrunoFranco\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\GestEvent.webapi\\obj\\",
+        "outputPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Data.gestevent\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\BrunoFranco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://packagesource": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.Core\\Gestevent.Core.csproj": {
+                "projectPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.Core\\Gestevent.Core.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "EntityFramework": {
+              "target": "Package",
+              "version": "[6.4.4, )"
+            },
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Abstractions": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Relational": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.Core\\Gestevent.Core.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.Core\\Gestevent.Core.csproj",
+        "projectName": "Gestevent.Core",
+        "projectPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.Core\\Gestevent.Core.csproj",
+        "packagesPath": "C:\\Users\\BrunoFranco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -45,6 +139,96 @@
       "frameworks": {
         "net5.0": {
           "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.2.21505.57\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
+    "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\Gestevent.webapi.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\Gestevent.webapi.csproj",
+        "projectName": "Gestevent.webapi",
+        "projectPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\Gestevent.webapi.csproj",
+        "packagesPath": "C:\\Users\\BrunoFranco\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\obj\\",
+        "projectStyle": "PackageReference",
+        "fallbackFolders": [
+          "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
+        ],
+        "configFilePaths": [
+          "C:\\Users\\BrunoFranco\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "C:\\Program Files\\dotnet\\library-packs": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://packagesource": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Data.gestevent\\Data.gestevent.csproj": {
+                "projectPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Data.gestevent\\Data.gestevent.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "dependencies": {
+            "Microsoft.EntityFrameworkCore": {
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Design": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Microsoft.EntityFrameworkCore.Tools": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[5.0.11, )"
+            },
+            "Pomelo.EntityFrameworkCore.MySql": {
+              "target": "Package",
+              "version": "[5.0.2, )"
+            },
+            "Swashbuckle.AspNetCore": {
+              "target": "Package",
+              "version": "[5.6.3, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",
