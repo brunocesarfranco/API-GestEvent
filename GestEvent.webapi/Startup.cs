@@ -1,4 +1,6 @@
 using Data.gestevent;
+using Data.gestevent.Repositories;
+using Gestevent.Core.Repositories;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
@@ -33,6 +35,8 @@ namespace Gestevent.webapi
             {
                 options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr));
             });
+
+            services.AddScoped<IEventsRepository, EventRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
