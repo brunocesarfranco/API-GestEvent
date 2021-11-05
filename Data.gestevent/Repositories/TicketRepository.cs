@@ -7,52 +7,53 @@ using System.Threading.Tasks;
 
 namespace Data.gestevent.Repositories
 {
-    public class EventRepository : IEventsRepository
+    public class TicketRepository : ITicketsRepository
     {
         private readonly GesteventDbContext _gesteventDbContext;
-        public EventRepository(GesteventDbContext gesteventDbContext)
+
+        public TicketRepository(GesteventDbContext gesteventDbContext)
         {
             _gesteventDbContext = gesteventDbContext;
         }
 
-        public async Task<EventModel> Add(EventModel evento)
+        public async Task<TicketModel> Add(TicketModel ticket)
         {
 
-            _gesteventDbContext.Add(evento);
+            _gesteventDbContext.Add(ticket);
             await _gesteventDbContext.SaveChangesAsync();
-            return evento;
+            return ticket;
         }
 
         public async Task<bool> Delete(Guid id)
         {
-            var aEvent = await _gesteventDbContext.Events
+            var aTicket = await _gesteventDbContext.Tickets
                 .FirstOrDefaultAsync(e => e.Id == id);
 
-            if (aEvent is null) 
+            if (aTicket is null)
             {
                 return false;
             }
 
-            _gesteventDbContext.Events.Remove(aEvent);
+            _gesteventDbContext.Tickets.Remove(aTicket);
 
             await _gesteventDbContext.SaveChangesAsync();
             return true;
         }
 
-        public async Task<EventModel> Get(Guid id)
+        public async Task<TicketModel> Get(Guid id)
         {
-            var aEvent = await _gesteventDbContext.Events
+            var aTicket = await _gesteventDbContext.Tickets
                 .AsNoTracking()
                 .FirstOrDefaultAsync(e => e.Id == id);
-            return aEvent;
+            return aTicket;
         }
 
-        public async Task<IEnumerable<EventModel>> GetAll()
+        public async Task<IEnumerable<TicketModel>> GetAll()
         {
-            var events = await _gesteventDbContext.Events
+            var tickets = await _gesteventDbContext.Tickets
                 .AsNoTracking()
                 .ToListAsync();
-            return events;
+            return tickets;
         }
     }
 }

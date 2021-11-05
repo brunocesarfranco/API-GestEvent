@@ -5,11 +5,11 @@ using System.Threading.Tasks;
 
 namespace Gestevent.Core.Repositories
 {
-    public interface IEventsRepository
+    public interface ITicketsRepository
     {
-        public Task<IEnumerable<EventModel>> GetAll();
-        public Task<EventModel> Get(Guid guid);
-        public Task<EventModel> Add(EventModel evento);
+        public Task<IEnumerable<TicketModel>> GetAll();
+        public Task<TicketModel> Get(Guid guid);
+        public Task<TicketModel> Add(TicketModel ticket);
         public Task<bool> Delete(Guid id);
     }
 }

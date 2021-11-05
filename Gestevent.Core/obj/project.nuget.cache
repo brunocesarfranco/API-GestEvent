@@ -1,8 +1,15 @@
 {
   "version": 2,
-  "dgSpecHash": "FUpeCdaFKjydWBF42zBTHZJWXAvyoBcvfMyGtVgurExos+FlOqiqrieSWoXFi1npPMi644ZIKtW/tInFU3KFgg==",
+  "dgSpecHash": "tyOK10WCnxTHjT69P/DR9dNP4B9abwfQEPfp/AcxLnJZSZp1lVZP6qFpu/QuadYJZaUxUzzDowerJpxJgGleYQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.Core\\Gestevent.Core.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\BrunoFranco\\.nuget\\packages\\microsoft.csharp\\4.5.0\\microsoft.csharp.4.5.0.nupkg.sha512",
+    "C:\\Users\\BrunoFranco\\.nuget\\packages\\microsoft.identitymodel.jsonwebtokens\\6.14.1\\microsoft.identitymodel.jsonwebtokens.6.14.1.nupkg.sha512",
+    "C:\\Users\\BrunoFranco\\.nuget\\packages\\microsoft.identitymodel.logging\\6.14.1\\microsoft.identitymodel.logging.6.14.1.nupkg.sha512",
+    "C:\\Users\\BrunoFranco\\.nuget\\packages\\microsoft.identitymodel.tokens\\6.14.1\\microsoft.identitymodel.tokens.6.14.1.nupkg.sha512",
+    "C:\\Users\\BrunoFranco\\.nuget\\packages\\system.identitymodel.tokens.jwt\\6.14.1\\system.identitymodel.tokens.jwt.6.14.1.nupkg.sha512",
+    "C:\\Users\\BrunoFranco\\.nuget\\packages\\system.security.cryptography.cng\\4.5.0\\system.security.cryptography.cng.4.5.0.nupkg.sha512"
+  ],
   "logs": []
 }

@@ -1,12 +1,17 @@
+using System.Text;
 using Data.gestevent;
 using Data.gestevent.Repositories;
+using Gestevent.Core;
 using Gestevent.Core.Repositories;
+using Gestevent.webapi.Controllers.Configurations;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 
 namespace Gestevent.webapi
@@ -25,11 +30,24 @@ namespace Gestevent.webapi
         {
             //services.AddScoped<IEventsRepository, EventRepositoty>();
             services.AddControllers();
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "Event.Api", Version = "v1" });
-            });
+            services.ResolveSwagger();
 
+            var key = Encoding.ASCII.GetBytes(Settings.Secret);
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(key),
+                    ValidateIssuer = false,
+                    ValidateAudience = false
+                };
+            });
             string mySqlConnectionStr = Configuration.GetConnectionString("connectionString");
             services.AddDbContext<GesteventDbContext>(options =>
             {
@@ -37,6 +55,9 @@ namespace Gestevent.webapi
             });
 
             services.AddScoped<IEventsRepository, EventRepository>();
+            services.AddScoped<ITicketsRepository, TicketRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,6 +74,11 @@ namespace Gestevent.webapi
 
             app.UseRouting();
 
+            app.UseCors(x => x
+            .AllowAnyOrigin()
+            .AllowAnyMethod()
+            .AllowAnyHeader());
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>

@@ -10,21 +10,22 @@ namespace Gestevent.webapi.Controllers
     [Route("api/[controller]")]
     [Authorize]
     [ApiController]
-    public class EventsController : ControllerBase
+    public class TicketController : ControllerBase
     {
-        private readonly IEventsRepository _eventsRepository;
-        public EventsController(IEventsRepository events)
+
+        private readonly ITicketsRepository _ticketsRepository;
+        public TicketController(ITicketsRepository tickets)
         {
-            _eventsRepository = events;
+            _ticketsRepository = tickets;
         }
 
         [HttpPost]
-        public async Task<ActionResult<EventModel>> Post([FromBody] EventModel aEvent)
+        public async Task<ActionResult<TicketModel>> Post([FromBody] TicketModel aTicket)
         {
             try
             {
-                await _eventsRepository.Add(aEvent);
-                return Ok(aEvent);
+                await _ticketsRepository.Add(aTicket);
+                return Ok(aTicket);
             }
             catch
             {
@@ -33,27 +34,26 @@ namespace Gestevent.webapi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<EventModel>> Get()
+        public async Task<ActionResult<TicketModel>> Get()
         {
             try
             {
-                var events = await _eventsRepository.GetAll();
-                return Ok(events);
+                var ticket = await _ticketsRepository.GetAll();
+                return Ok(ticket);
             }
             catch
             {
                 return Problem("Service unavalable", statusCode: 500);
             }
-
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<EventModel>> Get(Guid id)
+        public async Task<ActionResult<TicketModel>> Get(Guid id)
         {
             try
             {
-                var aEvent = await _eventsRepository.Get(id);
-                return aEvent is null ? NotFound() : Ok(aEvent);
+                var aTicket = await _ticketsRepository.Get(id);
+                return aTicket is null ? NotFound() : Ok(aTicket);
             }
             catch
             {
@@ -66,7 +66,7 @@ namespace Gestevent.webapi.Controllers
         {
             try
             {
-                var wasDeletes = await _eventsRepository.Delete(id);
+                var wasDeletes = await _ticketsRepository.Delete(id);
                 return wasDeletes ? NoContent() : NotFound();
             }
             catch
@@ -74,5 +74,6 @@ namespace Gestevent.webapi.Controllers
                 return Problem("Service unavalable", statusCode: 500);
             }
         }
+
     }
 }
