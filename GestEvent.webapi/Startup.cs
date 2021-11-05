@@ -31,6 +31,15 @@ namespace Gestevent.webapi
             //services.AddScoped<IEventsRepository, EventRepositoty>();
             services.AddControllers();
             services.ResolveSwagger();
+            string mySqlConnectionStr = Configuration.GetConnectionString("connectionString");
+            services.AddDbContext<GesteventDbContext>(options =>
+            {
+                options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr));
+            });
+
+            services.AddScoped<IEventsRepository, EventRepository>();
+            services.AddScoped<ITicketsRepository, TicketRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             var key = Encoding.ASCII.GetBytes(Settings.Secret);
             services.AddAuthentication(x =>
@@ -48,15 +57,7 @@ namespace Gestevent.webapi
                     ValidateAudience = false
                 };
             });
-            string mySqlConnectionStr = Configuration.GetConnectionString("connectionString");
-            services.AddDbContext<GesteventDbContext>(options =>
-            {
-                options.UseMySql(mySqlConnectionStr, ServerVersion.AutoDetect(mySqlConnectionStr));
-            });
-
-            services.AddScoped<IEventsRepository, EventRepository>();
-            services.AddScoped<ITicketsRepository, TicketRepository>();
-            services.AddScoped<IUserRepository, UserRepository>();
+            
 
         }
 
@@ -75,7 +76,7 @@ namespace Gestevent.webapi
             app.UseRouting();
 
             app.UseCors(x => x
-            .AllowAnyOrigin()
+            .WithOrigins("http://localhost:4200")
             .AllowAnyMethod()
             .AllowAnyHeader());
             app.UseAuthentication();

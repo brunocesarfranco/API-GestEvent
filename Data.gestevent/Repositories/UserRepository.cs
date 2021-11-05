@@ -17,7 +17,7 @@ namespace Data.gestevent.Repositories
             _gesteventDbContext = gesteventDbContext;
         }
 
-        public async Task<User> Add(User user)
+        public async Task<UserModel> Add(UserModel user)
         {
             _gesteventDbContext.Users.Add(user);
             await _gesteventDbContext.SaveChangesAsync();
@@ -26,30 +26,35 @@ namespace Data.gestevent.Repositories
            
         }
 
-        public async Task<dynamic> Authenticate(User user)
+        public async Task<dynamic> Authenticate(LoginFormModel user)
         {
+            
             try
             {
                 var login = await _gesteventDbContext.Users
                     .AsNoTracking()
                     .FirstOrDefaultAsync(x => 
                         x.Username == user.Username && 
-                        x.Password == user.Password && 
-                        x.Role == user.Role);
+                        x.Password == user.Password);
+
+                if(login is null)
+                {
+                    return null;
+                }
+
+                var token = TokenService.GenerateToken(login);
+                user.Password = "**********";
+
+                return new {
+                    user = user,
+                    token = token
+                };
+
             }
             catch(Exception ex)
             {
                 return ex;
             }
-            
-            var token = TokenService.GenerateToken(user);
-            user.Password = "**********";
-            
-            return new {
-                user = user,
-                token = token
-            };
-            
         }
 
         public async Task<bool> Delete(Guid id)
@@ -69,7 +74,7 @@ namespace Data.gestevent.Repositories
 
         }
 
-        public async Task<User> Get(Guid id)
+        public async Task<UserModel> Get(Guid id)
         {
             var aUser = await _gesteventDbContext.Users
                 .AsNoTracking()
@@ -77,7 +82,7 @@ namespace Data.gestevent.Repositories
             return aUser;
         }
 
-        public async Task<IEnumerable<User>> GetAll()
+        public async Task<IEnumerable<UserModel>> GetAll()
         {
             var users = await _gesteventDbContext.Users
                 .AsNoTracking()

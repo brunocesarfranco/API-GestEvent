@@ -11,7 +11,8 @@ namespace Data.gestevent
         }
         public DbSet<EventModel> Events { get; set; }
         public DbSet<TicketModel> Tickets { get; set; }
-        public DbSet<User> Users { get; set; }
+        public DbSet<UserModel> Users { get; set; }
+
 
     }
 }

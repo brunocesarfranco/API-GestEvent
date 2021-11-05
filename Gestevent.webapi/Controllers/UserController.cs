@@ -20,10 +20,16 @@ namespace Gestevent.webapi.Controllers
 
         [HttpPost]
         [AllowAnonymous]
-        public async Task<ActionResult<User>> Post([FromBody] User user)
+        public async Task<ActionResult<UserModel>> Post([FromBody] LoginFormModel registrationForm)
         {
             try
             {
+                var user = new UserModel() 
+                {
+                    Username = registrationForm.Username,
+                    Password = registrationForm.Password,
+                    Role = "cliente",
+                };
                 await _userRepository.Add(user);
                 return Ok(user);
             }
@@ -34,7 +40,7 @@ namespace Gestevent.webapi.Controllers
         }
 
         [HttpGet]
-        public async Task<ActionResult<User>> Get()
+        public async Task<ActionResult<UserModel>> Get()
         {
             try
             {
@@ -48,7 +54,7 @@ namespace Gestevent.webapi.Controllers
         }
 
         [HttpGet("{id}")]
-        public async Task<ActionResult<User>> Get(Guid id)
+        public async Task<ActionResult<UserModel>> Get(Guid id)
         {
             try
             {
@@ -62,7 +68,7 @@ namespace Gestevent.webapi.Controllers
         }
 
         [HttpDelete]
-        [Authorize]
+        
         public async Task<ActionResult> Delete(Guid id)
         {
             try
@@ -79,12 +85,12 @@ namespace Gestevent.webapi.Controllers
         [HttpPost]
         [AllowAnonymous]
         [Route("Login")]    
-        public async Task<ActionResult<dynamic>> Autenthicate ([FromBody] User user)
+        public async Task<ActionResult<dynamic>> Autenthicate ([FromBody] LoginFormModel loginForm)
         {
             try
             {
-                var login = await _userRepository.Authenticate(user);
-                return Ok(login);
+                var token = await _userRepository.Authenticate(loginForm);
+                return token is null ? Problem("Usuário não encontrado", statusCode: 400) : Ok(token);
             }
             catch(Exception ex)
             {

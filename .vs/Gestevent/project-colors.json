@@ -23,9 +23,14 @@
     },
     "8b53ffbc-cec1-47f9-bcaf-d279c1fbc692": {
       "ProjectGuid": "8b53ffbc-cec1-47f9-bcaf-d279c1fbc692",
-      "DisplayName": "Data.gestevent",
+      "DisplayName": "Gestevent.Data",
       "ColorIndex": 3
+    },
+    "8966db6d-8497-440e-ab78-54ec14a8b1a2": {
+      "ProjectGuid": "8966db6d-8497-440e-ab78-54ec14a8b1a2",
+      "DisplayName": "Solution Items",
+      "ColorIndex": 4
     }
   },
-  "NextColorIndex": 4
+  "NextColorIndex": 5
 }

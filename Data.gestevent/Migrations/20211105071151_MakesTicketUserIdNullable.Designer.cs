@@ -9,8 +9,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Data.gestevent.Migrations
 {
     [DbContext(typeof(GesteventDbContext))]
-    [Migration("20211103000245_Segunda")]
-    partial class Segunda
+    [Migration("20211105071151_MakesTicketUserIdNullable")]
+    partial class MakesTicketUserIdNullable
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -54,8 +54,11 @@ namespace Data.gestevent.Migrations
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(65,30)");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("char(36)");
+
+                    b.Property<bool>("WasSold")
+                        .HasColumnType("tinyint(1)");
 
                     b.HasKey("Id");
 
@@ -66,7 +69,7 @@ namespace Data.gestevent.Migrations
                     b.ToTable("Tickets");
                 });
 
-            modelBuilder.Entity("Gestevent.Core.Models.User", b =>
+            modelBuilder.Entity("Gestevent.Core.Models.UserModel", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -97,11 +100,9 @@ namespace Data.gestevent.Migrations
                         .WithMany()
                         .HasForeignKey("EventId");
 
-                    b.HasOne("Gestevent.Core.Models.User", "User")
+                    b.HasOne("Gestevent.Core.Models.UserModel", "User")
                         .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
+                        .HasForeignKey("UserId");
 
                     b.Navigation("Event");
 

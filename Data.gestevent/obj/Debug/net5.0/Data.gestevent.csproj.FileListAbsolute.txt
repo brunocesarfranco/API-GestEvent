@@ -50,3 +50,4 @@ C:\Users\BrunoFranco\Documents\GitHub\API-gestevent\Data.gestevent\obj\Debug\net
 C:\Users\BrunoFranco\Documents\GitHub\API-gestevent\Data.gestevent\obj\Debug\net5.0\ref\Data.gestevent.dll
 C:\Users\BrunoFranco\Documents\GitHub\API-gestevent\Data.gestevent\obj\Debug\net5.0\Data.gestevent.pdb
 C:\Users\BrunoFranco\Documents\GitHub\API-gestevent\Data.gestevent\obj\Debug\net5.0\Data.gestevent.genruntimeconfig.cache
+C:\Users\BrunoFranco\Documents\GitHub\API-gestevent\Data.gestevent\obj\Debug\net5.0\Data.gestevent.csproj.CopyComplete

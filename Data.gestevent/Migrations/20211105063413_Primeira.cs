@@ -52,7 +52,8 @@ namespace Data.gestevent.Migrations
                     Id = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
                     Price = table.Column<decimal>(type: "decimal(65,30)", nullable: false),
                     UserId = table.Column<Guid>(type: "char(36)", nullable: false, collation: "ascii_general_ci"),
-                    EventId = table.Column<Guid>(type: "char(36)", nullable: true, collation: "ascii_general_ci")
+                    EventId = table.Column<Guid>(type: "char(36)", nullable: true, collation: "ascii_general_ci"),
+                    WasSold = table.Column<bool>(type: "tinyint(1)", nullable: false)
                 },
                 constraints: table =>
                 {

@@ -12,7 +12,7 @@ namespace Gestevent.Core.Services
 {
     public class TokenService 
     {
-        public static string GenerateToken(User user)
+        public static string GenerateToken(UserModel user)
 
         {
             var TokenHandler = new JwtSecurityTokenHandler();

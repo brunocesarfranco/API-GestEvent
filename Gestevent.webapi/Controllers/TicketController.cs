@@ -14,16 +14,31 @@ namespace Gestevent.webapi.Controllers
     {
 
         private readonly ITicketsRepository _ticketsRepository;
-        public TicketController(ITicketsRepository tickets)
+        private readonly IEventsRepository _eventRepository;
+        public TicketController(ITicketsRepository tickets, IEventsRepository events)
         {
             _ticketsRepository = tickets;
+            _eventRepository = events;
         }
 
         [HttpPost]
-        public async Task<ActionResult<TicketModel>> Post([FromBody] TicketModel aTicket)
+        public async Task<ActionResult<TicketModel>> Post([FromBody] CreateTicketCommand command)
         {
             try
             {
+                var aEvent = await _eventRepository.Get(command.EventId);
+                if (aEvent is null)
+                {
+                    return Problem($"Cannot find a event with id {command.EventId}", statusCode: 400);
+                }
+                
+                var aTicket = new TicketModel() 
+                {
+                    EventId = command.EventId,
+                    Price = command.Price,
+                    WasSold = false,
+                };
+                
                 await _ticketsRepository.Add(aTicket);
                 return Ok(aTicket);
             }

@@ -3,16 +3,14 @@ using System;
 using Data.gestevent;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
-using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Data.gestevent.Migrations
 {
     [DbContext(typeof(GesteventDbContext))]
-    [Migration("20211102232931_Primeira")]
-    partial class Primeira
+    partial class mgdataModelSnapshot : ModelSnapshot
     {
-        protected override void BuildTargetModel(ModelBuilder modelBuilder)
+        protected override void BuildModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -48,25 +46,26 @@ namespace Data.gestevent.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("char(36)");
 
-                    b.Property<Guid?>("EventId")
+                    b.Property<Guid>("EventId")
                         .HasColumnType("char(36)");
 
                     b.Property<decimal>("Price")
                         .HasColumnType("decimal(65,30)");
 
-                    b.Property<Guid>("UserId")
+                    b.Property<Guid?>("UserId")
                         .HasColumnType("char(36)");
 
-                    b.HasKey("Id");
+                    b.Property<bool>("WasSold")
+                        .HasColumnType("tinyint(1)");
 
-                    b.HasIndex("EventId");
+                    b.HasKey("Id");
 
                     b.HasIndex("UserId");
 
                     b.ToTable("Tickets");
                 });
 
-            modelBuilder.Entity("Gestevent.Core.Models.User", b =>
+            modelBuilder.Entity("Gestevent.Core.Models.UserModel", b =>
                 {
                     b.Property<Guid>("Id")
                         .ValueGeneratedOnAdd()
@@ -93,17 +92,9 @@ namespace Data.gestevent.Migrations
 
             modelBuilder.Entity("Gestevent.Core.Models.TicketModel", b =>
                 {
-                    b.HasOne("Gestevent.Core.Models.EventModel", "Event")
+                    b.HasOne("Gestevent.Core.Models.UserModel", "User")
                         .WithMany()
-                        .HasForeignKey("EventId");
-
-                    b.HasOne("Gestevent.Core.Models.User", "User")
-                        .WithMany()
-                        .HasForeignKey("UserId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("Event");
+                        .HasForeignKey("UserId");
 
                     b.Navigation("User");
                 });

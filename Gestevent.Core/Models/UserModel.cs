@@ -2,7 +2,7 @@
 
 namespace Gestevent.Core.Models
 {
-    public class User : Entity
+    public class UserModel : Entity
     {
         [Required(ErrorMessage = "Este campo é obrigatório")]
         [MaxLength(20, ErrorMessage = "Este campo deve conter entre 3 e 20 caracteres")]

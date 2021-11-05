@@ -2,7 +2,7 @@
 
 namespace Data.gestevent.Migrations
 {
-    public partial class Segunda : Migration
+    public partial class TesteApresentacao : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
