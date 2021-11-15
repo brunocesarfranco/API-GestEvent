@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "h6O1oph/kzL+zYaPuDkenFTFnfd7Xdx17QiI8qikrtanYtaQVbGxme8AgZP4aLF0XneMkAn+0iMO+HFs3cHegg==",
+  "dgSpecHash": "jF0pbr/hSNWEBn5pabcw1jlBdFWnuUd4sfUu/XZLzrwy0daLgrn/Pn/nfKmGSXt5O6iuDw9/NT3EVAx1lqD4gg==",
   "success": true,
-  "projectFilePath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\Gestevent.webapi.csproj",
+  "projectFilePath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\GestEvent.webapi.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\BrunoFranco\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\BrunoFranco\\.nuget\\packages\\humanizer.core\\2.8.26\\humanizer.core.2.8.26.nupkg.sha512",

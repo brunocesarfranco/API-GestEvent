@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\Gestevent.webapi.csproj": {}
+    "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\GestEvent.webapi.csproj": {}
   },
   "projects": {
     "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Data.gestevent\\Data.gestevent.csproj": {
@@ -168,12 +168,12 @@
         }
       }
     },
-    "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\Gestevent.webapi.csproj": {
+    "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\GestEvent.webapi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\Gestevent.webapi.csproj",
-        "projectName": "Gestevent.webapi",
-        "projectPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\Gestevent.webapi.csproj",
+        "projectUniqueName": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\GestEvent.webapi.csproj",
+        "projectName": "GestEvent.webapi",
+        "projectPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\GestEvent.webapi.csproj",
         "packagesPath": "C:\\Users\\BrunoFranco\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\BrunoFranco\\Documents\\GitHub\\API-gestevent\\Gestevent.webapi\\obj\\",
         "projectStyle": "PackageReference",
